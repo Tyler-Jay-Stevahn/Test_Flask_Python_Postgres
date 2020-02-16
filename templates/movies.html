@@ -1,28 +1,27 @@
-<!-- HTML CODE FOR JINJA2: PART 1 -->
-<!-- USE WITH THE PYTHON FILE PROVIDED -->
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+    
+<head>
+    <meta charset="UTF-8">
+    <title>Watchable</title>
+</head>
+    
+<body>
+    <h1>Movies to watch in 2017</h1>
+    <h1>This collection belongs to {{ name }} </h1>
 
-        <meta charset="UTF-8">
-        <title>Watchable</title>
+    <h3> movies: {{ movies }} </h3>
+    <h3> first: {{ movies[0] }} </h3>
+    <h3> slicing: {{ movies[1:4] }} </h3>
+    
+    <hr>
 
-    </head>
-    <body>
+    <ul>
+        {% for item in movies %}
+            <li> the movie is: {{ item }} </li>
+        {% endfor %}
+    </ul>
 
-        <h1> Movies to Watch </h1>
-        <h2> This Collection Belongs to {{ name }} </h2>
-
-        <h3> movies: {{ movies }} </h3>
-        <h3> first: {{ movies[0] }} </h3>
-        <h3> slicing: {{ movies[1:4] }} </h3>
-        <hr>
-
-        <ul>
-            {% for item in movies %}
-                <li> the movie is : {{ item }} </li>
-            {% endfor %}
-        </ul>
-    </body>
+</body>
 </html>
