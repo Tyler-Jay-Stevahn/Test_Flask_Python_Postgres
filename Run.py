@@ -16,6 +16,7 @@ app.config.update(
 
 db = SQLAlchemy(app)
 
+# hello this is a change
 
 @app.route('/index')
 @app.route('/')
@@ -155,7 +156,8 @@ class Book(db.Model):
     # ESTABLISH A RELATIONSHIP BETWEEN PUBLICATION AND BOOK TABLES
     pub_id = db.Column(db.Integer, db.ForeignKey('publication.id'))
 
-    def __init__(self, title, author, avg_rating, book_format, image, num_pages, pub_id):
+    def __init__(self, title, author, avg_rating, book_format, image,
+                 num_pages, pub_id):
 
         self.title = title
         self.author = author
